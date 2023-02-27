@@ -1,0 +1,118 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+  padding: 20px; 
+  display: grid;
+  gap: 20px; 
+}
+.row > div {
+    background: #95d625;
+    padding: 20px;
+    border-radius: 10px;
+}
+.grid-class .item {
+    background: #67a9d5;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+/* Стилизуем флекс-грид сетку */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  /* 100% = 50% + 50% + 20px (gap row) */
+
+.col-1 {
+    flex: 0 1 calc(100% - 20px);
+}
+.col-2 {
+    flex: 0 1 calc(50% - 20px);
+}
+.col-3 {
+    flex: 0 1 calc(33.3% - 20px);
+}
+.col-4 {
+    flex: 0 1 calc(25% - 20px);
+}
+.col-5 {
+    flex: 0 1 calc(20% - 20px);
+}
+@media screen and (max-width: 992px) {
+    .row .col-2, .col-4, .row .col-5 {
+        flex: 0 1 calc(100% - 20px);
+        background: goldenrod;
+    }
+    .col-3 {
+        flex: 0 1 calc(50% - 20px);
+        
+    }
+}
+@media screen and (max-width: 576px) {
+    .row .col-3 {
+        flex: 0 1 calc(100% - 20px);
+        background: hsl(0, 18%, 44%);
+    }
+}
+
+/* Стилизуем чисто грид сетку */
+
+.grid-class {
+    display: grid;
+    gap: 50px;
+}
+
+.grid-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+@media screen and (max-width: 992px) {
+    .grid-2 {
+        grid-template-columns: 1fr;    
+    }
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);    
+    }
+    .grid-4, .grid-5 {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .grid-4 .item, .grid-5 .item {
+        background: #ba8940;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .grid-3, .grid-4, .grid-5 {
+        grid-template-columns: 1fr; 
+    }    
+}
